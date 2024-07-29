@@ -65,7 +65,7 @@ public class AIController {
                 ChatClient.create(chatModel).prompt()
                         .user(userSpec -> userSpec.text("Explain what do you see in this Image")
                                 .media(MimeTypeUtils.IMAGE_JPEG,
-                                        new FileSystemResource("/Users/shabbir/Documents/java-workspace/spring-ai-multimodel/src/main/resources/pexels-pixabay-270404.jpg")))
+                                        new FileSystemResource("image path")))
                         .call()
                         .content();
         return response;
@@ -84,7 +84,7 @@ public class AIController {
 
         AudioTranscriptionPrompt prompt
                 = new AudioTranscriptionPrompt(
-                        new FileSystemResource("/Users/shabbir/Documents/java-workspace/spring-ai-multimodel/src/main/resources/harvard.wav"),
+                        new FileSystemResource("Audio file path"),
                 options);
 
         AudioTranscriptionResponse response
